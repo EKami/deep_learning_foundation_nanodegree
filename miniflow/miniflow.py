@@ -166,8 +166,7 @@ class Sigmoid(Node):
             """
 
             # Set the partial of the loss with respect to this node's inputs.
-            r = np.dot(grad_cost, self._sigmoid_prime(self.value[0][0]))
-            self.gradients[self.inbound_nodes[0]] += r
+            self.gradients[self.inbound_nodes[0]] += grad_cost * self._sigmoid_prime(self.value)
 
 
 class MSE(Node):
