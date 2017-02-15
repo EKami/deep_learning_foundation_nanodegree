@@ -165,14 +165,9 @@ class Sigmoid(Node):
             NOTE: See the Linear node and MSE node for examples.
             """
 
-            ## --- Mine
             # Set the partial of the loss with respect to this node's inputs.
-            r = np.dot(grad_cost, self._sigmoid_prime(self.value).T)
+            r = np.dot(grad_cost, self._sigmoid_prime(self.value[0][0]))
             self.gradients[self.inbound_nodes[0]] += r
-            # Set the partial of the loss with respect to this node's weights.
-            self.gradients[self.inbound_nodes[1]] += np.dot(self.inbound_nodes[0].value.T, grad_cost)
-            # Set the partial of the loss with respect to this node's bias.
-            self.gradients[self.inbound_nodes[2]] += np.sum(grad_cost, axis=0, keepdims=False)
 
 
 class MSE(Node):
