@@ -1,6 +1,3 @@
-"""
-Implement the backward method of the Sigmoid node.
-"""
 import numpy as np
 
 
@@ -12,7 +9,6 @@ class Node(object):
 
         `inbound_nodes`: A list of nodes with edges into this node.
     """
-
     def __init__(self, inbound_nodes=[]):
         """
         Node's constructor (runs when the object is instantiated). Sets
@@ -53,7 +49,6 @@ class Input(Node):
     """
     A generic input into the network.
     """
-
     def __init__(self):
         # The base class constructor has to run to set all
         # the properties here.
@@ -74,15 +69,12 @@ class Input(Node):
         # Weights and bias may be inputs, so you need to sum
         # the gradient from output gradients.
         for n in self.outbound_nodes:
-            grad_cost = n.gradients[self]
-            self.gradients[self] += grad_cost * 1
-
+            self.gradients[self] += n.gradients[self]
 
 class Linear(Node):
     """
     Represents a node that performs a linear transform.
     """
-
     def __init__(self, X, W, b):
         # The base class (Node) constructor. Weights and bias
         # are treated like inbound nodes.
@@ -120,7 +112,6 @@ class Sigmoid(Node):
     """
     Represents a node that performs the sigmoid activation function.
     """
-
     def __init__(self, node):
         # The base class constructor.
         Node.__init__(self, [node])
@@ -133,9 +124,6 @@ class Sigmoid(Node):
         `x`: A numpy array-like object.
         """
         return 1. / (1. + np.exp(-x))
-
-    def _sigmoid_prime(self, sigmoid):
-        return sigmoid * (1 - sigmoid)
 
     def forward(self):
         """
@@ -151,22 +139,11 @@ class Sigmoid(Node):
         """
         # Initialize the gradients to 0.
         self.gradients = {n: np.zeros_like(n.value) for n in self.inbound_nodes}
-
-        # Cycle through the outputs. The gradient will change depending
-        # on each output, so the gradients are summed over all outputs.
+        # Sum the partial with respect to the input over all the outputs.
         for n in self.outbound_nodes:
-            # Get the partial of the cost with respect to this node.
             grad_cost = n.gradients[self]
-            """
-            TODO: Your code goes here!
-
-            Set the gradients property to the gradients with respect to each input.
-
-            NOTE: See the Linear node and MSE node for examples.
-            """
-
-            # Set the partial of the loss with respect to this node's inputs.
-            self.gradients[self.inbound_nodes[0]] += grad_cost * self._sigmoid_prime(self.value)
+            sigmoid = self.value
+            self.gradients[self.inbound_nodes[0]] += sigmoid * (1 - sigmoid) * grad_cost
 
 
 class MSE(Node):
@@ -197,14 +174,11 @@ class MSE(Node):
         self.m = self.inbound_nodes[0].value.shape[0]
         # Save the computed output for backward.
         self.diff = y - a
-        self.value = np.mean(self.diff ** 2)
+        self.value = np.mean(self.diff**2)
 
     def backward(self):
         """
         Calculates the gradient of the cost.
-
-        This is the final node of the network so outbound nodes
-        are not a concern.
         """
         self.gradients[self.inbound_nodes[0]] = (2 / self.m) * self.diff
         self.gradients[self.inbound_nodes[1]] = (-2 / self.m) * self.diff
@@ -266,5 +240,21 @@ def forward_and_backward(graph):
 
     # Backward pass
     # see: https://docs.python.org/2.3/whatsnew/section-slices.html
-    for n in graph[::-1]: # Unstack all elements from the list backward
+    for n in graph[::-1]:
         n.backward()
+
+
+def sgd_update(trainables, learning_rate=1e-2):
+    """
+    Updates the value of each trainable with SGD.
+
+    Arguments:
+
+        `trainables`: A list of `Input` Nodes representing weights/biases.
+        `learning_rate`: The learning rate.
+    """
+    for t in trainables:
+        # weights = t.value[0]
+        # biases = t.value[1]
+        gradients = t.gradients[t]
+        t.value -= learning_rate * gradients
