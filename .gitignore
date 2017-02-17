@@ -1,3 +1,5 @@
 .ipynb_checkpoints
 .idea/*
 miniflow/.idea/*
+intro-to-tensorflow/notMNIST_test.zip
+intro-to-tensorflow/notMNIST_train.zip
