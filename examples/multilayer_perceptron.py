@@ -27,6 +27,7 @@ biases = {
 x = tf.placeholder("float", [None, 28, 28, 1])
 y = tf.placeholder("float", [None, n_classes])
 
+# Input layer
 x_flat = tf.reshape(x, [-1, n_input])  # Reshapes the 28px by 28px matrices in x into vectors of 784px by 1px
 
 # Hidden layer with RELU activation
