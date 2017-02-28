@@ -1,6 +1,7 @@
 .ipynb_checkpoints
 .idea/*
 miniflow/.idea/*
+MNIST_data/
 intro-to-tensorflow/notMNIST_test.zip
 intro-to-tensorflow/notMNIST_train.zip
 intro-to-tensorflow/notMNIST.pickle
