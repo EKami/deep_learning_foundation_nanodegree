@@ -5,3 +5,6 @@ MNIST_data/
 intro-to-tensorflow/notMNIST_test.zip
 intro-to-tensorflow/notMNIST_train.zip
 intro-to-tensorflow/notMNIST.pickle
+project_2/__pycache__/
+project_2/cifar-10-batches-py/
+project_2/cifar-10-python.tar.gz
