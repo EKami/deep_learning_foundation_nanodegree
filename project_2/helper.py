@@ -44,6 +44,7 @@ def display_stats(cifar10_dataset_folder_path, batch_id, sample_id):
     print('Samples: {}'.format(len(features)))
     print('Label Counts: {}'.format(dict(zip(*np.unique(labels, return_counts=True)))))
     print('First 20 Labels: {}'.format(labels[:20]))
+    print('Min/Max values for labels: {}/{}'.format(min(labels), max(labels)))
 
     sample_image = features[sample_id]
     sample_label = labels[sample_id]
@@ -55,6 +56,7 @@ def display_stats(cifar10_dataset_folder_path, batch_id, sample_id):
     print('Label - Label Id: {} Name: {}'.format(sample_label, label_names[sample_label]))
     plt.axis('off')
     plt.imshow(sample_image)
+    plt.show()
 
 
 def _preprocess_and_save(normalize, one_hot_encode, features, labels, filename):
