@@ -8,6 +8,7 @@ This repository contains all my projects from the [Deep learning nanodegree foun
    - __Miniflow__ (`miniflow`): A mini clone of basic tensorflow operations using only numpy as a dependency (other dependecy such as sklearn are used to manipulate the data but not to create the neural net)
    - __Intro to tensorflow__ (`intro-to-tensorflow`): Ipython notebook showing basic tensorflow operations 
    - __Sentiment analysis__ (`sentiment_network`): Will try to classify a section of human generated text as positive or negative
+   - __Neural nets weight initialization__(`weight-initialization`): Shows how the weight initialization can affect the training of a model and how important it is to initialize the weights properly.
    - __Tensorflow benchmark__ (`tensorflow_benchmark.ipynb`): Used to measure tensorflow rapidity (The results from the notebook come from a computer with an Intel core i7 7700k/32gb RAM/GTX 1070) 
    
 ## Dependencies
