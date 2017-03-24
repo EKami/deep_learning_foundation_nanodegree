@@ -7,7 +7,7 @@ This repository contains all my projects from the [Deep learning nanodegree foun
    - __Project 2__ (`project_2`): How to build a convolutional neural network able to classify images from the [CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
    - __Miniflow__ (`miniflow`): A mini clone of basic tensorflow operations using only numpy as a dependency (other dependecy such as sklearn are used to manipulate the data but not to create the neural net)
    - __Intro to tensorflow__ (`intro-to-tensorflow`): Ipython notebook showing basic tensorflow operations 
-   - __Sentiment analysis__ (`sentiment_network`): Will try to classify a section of human generated text as positive or negative
+   - __Sentiment analysis__ (`sentiment_network`/`sentiment_network_rnn`): Will try to classify a section of human generated text as positive or negative (the second project uses RNN)
    - __Neural nets weight initialization__(`weight-initialization`): Shows how the weight initialization can affect the training of a model and how important it is to initialize the weights properly.
    - __Tensorflow benchmark__ (`tensorflow_benchmark.ipynb`): Used to measure tensorflow rapidity (The results from the notebook come from a computer with an Intel core i7 7700k/32gb RAM/GTX 1070) 
    
