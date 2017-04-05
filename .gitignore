@@ -14,3 +14,9 @@ project_2/image_classification.data-00000-of-00001
 project_2/image_classification.index
 project_2/image_classification.meta
 embeddings/checkpoints/
+project_3/checkpoint
+project_3/params.p
+project_3/save.data-00000-of-00001
+project_3/save.index
+project_3/save.meta
+project_3/__pycache__
