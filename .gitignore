@@ -24,6 +24,8 @@ project_4/checkpoints
 project_4/__pycache__/
 project_4/preprocess.p
 project_4/params.p
+project_5/__pycache__/
+project_5/data/
 transfer-learning/codes
 transfer-learning/flower_photos.tar.gz
 transfer-learning/flower_photos/
