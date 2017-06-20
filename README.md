@@ -13,6 +13,7 @@ This repository contains all my projects from the [Deep learning nanodegree foun
    - __Sentiment analysis__ (`sentiment_network`/`sentiment_network_rnn`): Will try to classify a section of human generated text as positive or negative (the second project uses RNN)
    - __Neural nets weight initialization__(`weight-initialization`): Shows how the weight initialization can affect the training of a model and how important it is to initialize the weights properly.
    - __Batch normalization__ (`batch-norm`): Complete tutorial on how batch normalization works and why it works
+   - __Autoencoders__(`autoencoder`): An example of building autoencoders with tensorflow and the MNIST dataset
    - __GANs MNIST__ (`gan_mnist`): How to generate MNIST digits with simple gnerative adversarial networks
    - __DCGANs Street view House numbers__ (`dcgan-svhn`): How to use deep convolutional GANs to genrate street view house numbers
    - __Tensorflow benchmark__ (`tensorflow_benchmark.ipynb`): Used to measure tensorflow rapidity (The results from the notebook come from a computer with an Intel core i7 7700k/32gb RAM/GTX 1070) 

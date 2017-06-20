@@ -3,6 +3,10 @@
 miniflow/.idea/*
 MNIST_data/
 tensorflow_benchmark.py
+autoencoder/Simple_Autoencoder.py
+autoencoder/Simple_Autoencoder_Solution.py
+autoencoder/Convolutional_Autoencoder.py
+autoencoder/Convolutional_Autoencoder_Solution.py
 intro-to-tensorflow/notMNIST_test.zip
 intro-to-tensorflow/notMNIST_train.zip
 intro-to-tensorflow/notMNIST.pickle
