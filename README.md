@@ -16,6 +16,7 @@ This repository contains all my projects from the [Deep learning nanodegree foun
    - __Autoencoders__(`autoencoder`): An example of building autoencoders with tensorflow and the MNIST dataset
    - __GANs MNIST__ (`gan_mnist`): How to generate MNIST digits with simple gnerative adversarial networks
    - __DCGANs Street view House numbers__ (`dcgan-svhn`): How to use deep convolutional GANs to genrate street view house numbers
+   - __GANs semi supervised learning__(`semi-supervised-gans`): How to use GANs for semi supervised learning
    - __Tensorflow benchmark__ (`tensorflow_benchmark.ipynb`): Used to measure tensorflow rapidity (The results from the notebook come from a computer with an Intel core i7 7700k/32gb RAM/GTX 1070) 
    
 ## Dependencies
