@@ -7,6 +7,9 @@ autoencoder/Simple_Autoencoder.py
 autoencoder/Simple_Autoencoder_Solution.py
 autoencoder/Convolutional_Autoencoder.py
 autoencoder/Convolutional_Autoencoder_Solution.py
+semi-supervised-gans/semi-supervised_learning_2.py
+semi-supervised-gans/semi-supervised_learning_2_solution.py
+semi-supervised-gans/data
 intro-to-tensorflow/notMNIST_test.zip
 intro-to-tensorflow/notMNIST_train.zip
 intro-to-tensorflow/notMNIST.pickle
